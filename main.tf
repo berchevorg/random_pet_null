@@ -4,12 +4,12 @@ resource "random_pet" "name" {
 }
 
 
-resource "null_resource" "helloWorld" {
-  provisioner "local-exec" {
-    command = "echo ${random_pet.name.id}"
-  }
-}
+# resource "null_resource" "helloWorld" {
+#   provisioner "local-exec" {
+#     command = "echo ${random_pet.name.id}"
+#   }
+# }
 
 output "random_pet" {
-  value = random_pet.name.id
+  value = "${random_pet.name.id}"
 }
