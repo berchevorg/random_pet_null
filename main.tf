@@ -12,3 +12,9 @@ resource "random_pet" "name" {
 output "random_pet" {
   value = random_pet.name.id
 }
+
+resource "null_resource" "echo_dummyy" {
+  provisioner local-exec {
+    command = "echo just null"
+  }
+}
