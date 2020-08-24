@@ -3,7 +3,7 @@ resource "random_pet" "name" {
  separator = "-"
 }
 
-version 0.11
+#version 0.11
 output "random_pet" {
   value = "${random_pet.name.id}"
 }
