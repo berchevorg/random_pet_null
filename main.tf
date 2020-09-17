@@ -23,19 +23,20 @@ resource "null_resource" "echo_dummyy" {
   }
 }
 
-# resource "null_resource" "echo_dummyy1" {
-#   provisioner local-exec {
-#     command = "git rev-parse master"
-#   }
+resource "null_resource" "echo_dummyy1" {
+  provisioner local-exec {
+    command = "which cat"
+  }
  
-#   triggers = {
-#      hack = "${timestamp()}"
-#   }
-# }
+  triggers = {
+     hack = "${timestamp()}"
+  }
+}
+
 
 resource "null_resource" "echo_dummyy2" {
   provisioner local-exec {
-    command = "cat .terraformignore"
+    command = "pwd"
   }
  
   triggers = {
