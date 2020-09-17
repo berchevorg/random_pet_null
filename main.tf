@@ -15,6 +15,6 @@ output "random_pet" {
 
 resource "null_resource" "echo_dummyy" {
   provisioner local-exec {
-    command = "echo just null"
+    command = "which git"
   }
 }
