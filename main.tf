@@ -15,7 +15,17 @@ output "random_pet" {
 
 resource "null_resource" "echo_dummyy" {
   provisioner local-exec {
-    command = "which python3"
+    command = "ls -alR"
+  }
+ 
+  triggers = {
+     hack = "${timestamp()}"
+  }
+}
+
+resource "null_resource" "echo_dummyy1" {
+  provisioner local-exec {
+    command = "git rev-parse master"
   }
  
   triggers = {
