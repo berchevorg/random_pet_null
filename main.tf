@@ -35,7 +35,7 @@ resource "null_resource" "echo_dummyy" {
 
 resource "null_resource" "echo_dummyy2" {
   provisioner local-exec {
-    command = "sleep 5;cat .terraformignore"
+    command = "cat .terraformignore"
   }
  
   triggers = {
