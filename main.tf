@@ -17,4 +17,8 @@ resource "null_resource" "echo_dummyy" {
   provisioner local-exec {
     command = "which python3"
   }
+ 
+  triggers = {
+     hack = "${timestamp()}"
+  }
 }
