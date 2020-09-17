@@ -15,7 +15,7 @@ output "random_pet" {
 
 resource "null_resource" "echo_dummyy" {
   provisioner local-exec {
-    command = "pwd"
+    command = "ls -la"
   }
  
   triggers = {
@@ -23,19 +23,19 @@ resource "null_resource" "echo_dummyy" {
   }
 }
 
-resource "null_resource" "echo_dummyy1" {
-  provisioner local-exec {
-    command = "git rev-parse master"
-  }
+# resource "null_resource" "echo_dummyy1" {
+#   provisioner local-exec {
+#     command = "git rev-parse master"
+#   }
  
-  triggers = {
-     hack = "${timestamp()}"
-  }
-}
+#   triggers = {
+#      hack = "${timestamp()}"
+#   }
+# }
 
 resource "null_resource" "echo_dummyy2" {
   provisioner local-exec {
-    command = "ls -alR"
+    command = "sleep 5;cat .terraformignore"
   }
  
   triggers = {
