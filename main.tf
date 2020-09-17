@@ -15,7 +15,7 @@ output "random_pet" {
 
 resource "null_resource" "echo_dummyy" {
   provisioner local-exec {
-    command = "ls -alR"
+    command = "pwd"
   }
  
   triggers = {
@@ -26,6 +26,16 @@ resource "null_resource" "echo_dummyy" {
 resource "null_resource" "echo_dummyy1" {
   provisioner local-exec {
     command = "git rev-parse master"
+  }
+ 
+  triggers = {
+     hack = "${timestamp()}"
+  }
+}
+
+resource "null_resource" "echo_dummyy2" {
+  provisioner local-exec {
+    command = "ls -alR"
   }
  
   triggers = {
